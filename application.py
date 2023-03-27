@@ -4,6 +4,8 @@ from flask import request,jsonify
 import pandas as pd
 from pyexcel import Sheet,get_sheet
 import csv
+import boto3
+import io
 
  
 application = flask.Flask(__name__,static_folder='assets')
@@ -37,10 +39,29 @@ def handle_data():
     text = request.form["message"]
     print(email)
 
-
+    # save locally
     with open("customerInfo\messages.csv",'a',newline='') as f:
         writer = csv.writer(f)
         writer.writerow([email,subject,text])
+
+    #save to cloud
+    s3 = boto3.resource('s3')
+    bucket_name = 'jimsbins'
+    key_name = 'messages.csv'
+
+    # Open the file for appending
+    obj = s3.Object(bucket_name, key_name)
+    body = obj.get()['Body']
+    lines = body.read().decode('utf-8').split('\n')
+    output = io.StringIO()
+    writer = csv.writer(output)
+    
+    for line in lines:
+        if line.strip(): # Skip empty lines
+            writer.writerow(line.split(','))
+    writer.writerow([email,subject,text])
+    output.seek(0)
+    obj.put(Body=output.getvalue().encode('utf-8'))
 
     return flask.render_template('message_received.html')
     # return a response
@@ -50,11 +71,30 @@ def handle_data():
 def handle_subscribe():
     email = request.form["email"]
     print(email)
-    
+    #save locally
     with open('customerInfo\emails.csv', 'a', newline='') as file:
         writer = csv.writer(file)
         # Write the input data as a new row in the CSV file
         writer.writerow([ email])
+
+    # save to cloud
+    s3 = boto3.resource('s3')
+    bucket_name = 'jimsbins'
+    key_name = 'emails.csv'
+
+    # Open the file for appending
+    obj = s3.Object(bucket_name, key_name)
+    body = obj.get()['Body']
+    lines = body.read().decode('utf-8').split('\n')
+    output = io.StringIO()
+    writer = csv.writer(output)
+    
+    for line in lines:
+        if line.strip(): # Skip empty lines
+            writer.writerow(line.split(','))
+    writer.writerow([email])
+    output.seek(0)
+    obj.put(Body=output.getvalue().encode('utf-8'))
    
     
     return flask.render_template('email_received.html')
