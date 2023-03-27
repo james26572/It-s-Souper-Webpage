@@ -46,7 +46,7 @@ def handle_data():
 
     #save to cloud
     s3 = boto3.resource('s3')
-    bucket_name = 'jimsbins'
+    bucket_name = 'fuckingpleaseworkbucket'
     key_name = 'messages.csv'
 
     # Open the file for appending
@@ -79,7 +79,7 @@ def handle_subscribe():
 
     # save to cloud
     s3 = boto3.resource('s3')
-    bucket_name = 'jimsbins'
+    bucket_name = 'fuckingpleaseworkbucket'
     key_name = 'emails.csv'
 
     # Open the file for appending
