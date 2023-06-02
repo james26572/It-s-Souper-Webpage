@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GWNNJCY90W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GWNNJCY90W');
+</script>
+
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+        <!--Google Analytics account setup-->
+
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        
+        
+
+        <title>Souper Fresh</title>
+
+
+
+         <!-- Google tag (gtag.js) -->
+    
+
+<!--End of google analytics setup-->
+    </head>
+    
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <img src = "/assets/img/favicon.png" height ="32" width = "32" 
+                    type="image/x-icon">
+                     Souper Fresh
+                </a>
+ 
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Production</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#faqs" class="nav__link">Supporters</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Us</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{{url_for('shop') }}" class="nav__link">Shop!</a>
+                        </li>
+                        
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <img src="\assets\img\Souper Fresh Logo Final-01.png" alt="" class="home__img">
+
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Souper Fresh. <br> Super Good.
+                        </h1>
+                        <p class="home__description">
+                            Savour the flavors of nature's bounty - with nutrient-rich soups made from whey!
+                        </p>
+                        <a href="#about" class="button button--flex">
+                            Explore <i class="ri-arrow-right-down-line button__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__social">
+                        <span class="home__social-follow">Follow Us</span>
+
+                        <div class="home__social-links">
+                            <a href="https://www.linkedin.com/company/its-souper/" target="_blank" class="home__social-link">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/souper.fresh" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <img src="\assets/img/MOCKUP-01.png" alt="" class="about__img">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Who we really are & <br> why choose us
+                        </h2>
+
+                        <p class="about__description">
+                            We meet all the guidelines of the HSE for food producing and
+                            heal nature in our production process 
+
+                        </p>
+                    
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                One seving of our soup contains half the daily reccommended intake of vitamin B12
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Each bowl of soup you buy contributes to healing the environment
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                We donate one in every 10 bowls sold to people in need
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Our soup is delicious
+                            </p>
+                        </div>
+                        
+                    
+
+                        
+                    </div>
+                </div>
+                <!--==================Pictures of Team====================-->
+<div class = "user-details">
+    <h1>The Team</h1>
+                <picture>
+                    <source
+                      type="image/webp"
+                      srcset="\assets\img\james.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                    <img
+                      src="\assets\img\james.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                  </picture>
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="\assets\img\daniel.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                    <img
+                      src="\assets\img\daniel.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                  </picture>
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="\assets\img\jack lad.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                    <img
+                      src="\assets\img\jack lad.png"
+                      alt="Professional Me"
+                      width="20%"
+                      style="border-radius: 50%"
+                    />
+                  </picture>
+                </div>
+                
+                  <!---->
+            </section>
+
+           
+
+            <!--==================== STEPS ====================-->
+            
+            <!--==================== Poduction steps ====================-->
+            <section class="product section container" id="products">
+                <h2 class="section__title-center">
+                    How our process <br> is environmentally friendly
+                </h2>
+
+                <p class="product__description">
+                    The following pictures visually show the problems that Souper Fresh fix. 
+                    Buy and enjoy best quality while also helping the environment.
+                </p>
+
+                <div class="product__container grid">
+                    <article class="product__card">
+                        <div class="product__circle"></div>
+
+                        <img src="\assets/img/waste whey.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Whey is a by-product of cheese making</h3>
+                        
+                    </article>
+
+                    <article class="product__card">
+                        
+
+                        <img src="\assets/img/whey collector.png" alt="" class="product__img">
+                        <h3 class = "product__title">Farmhouse cheesemakers pay to get rid of it 
+                            
+                        </h3>
+
+                        
+                    </article>
+
+                    <article class="product__card">
+                        
+
+                        <img src="\assets/img/wheyonland.png" alt="" class="product__img">
+                        <h3 class = "product__title">or spread it on the land if they have some</h3>
+                        
+                    </article>
+
+                    <article class="product__card">
+                        
+
+                        <img src="\assets/img/bonebroth.png" alt="" class="product__img">
+                        <h3 class = "product__title">While soup makers have to pay for stock
+                            <br> or make their own form simmering bones
+                        </h3>
+
+                        
+                    </article>
+
+                    <article class="product__card">
+                        
+
+                        <img src="\assets/img/salt.png" alt="" class="product__img">
+                        <h3 class = "product__title">Resulting in a soup with very high salt content
+                        </h3>
+                        
+
+                        
+                    </article>
+
+                    <article class="product__card">
+                        
+
+                        <img src="\assets/img/water pollution.png" alt="" class="product__img">
+                        <h3 class = "product__title">
+                             and a production process that requires large amounts of energy and water, contributing to carbon emissions and water pollution.
+                        </h3>
+                        
+                    </article>
+
+                    
+                </div>
+                <article>
+                    <h4 class="product__title">Souper Fresh mitigates all the negative effects of traditional soup-making, while 
+                        also saving cheesemakers money and promoting the quality of their land. We are
+                        dedicated to supplying the highest quality soup on the market, by providing customers
+                        with a product that is far more nutricious than our competitive counterparts, and with
+                        a much more environmentally friendly production process. 
+
+                    </h4>
+                    
+
+                </article>
+<!--testing image slider-->
+
+<div class="slider">
+    <div class="slider-nav">
+      <img src="\assets\img\veg.png" alt="Image 1" class="slider-nav-item">
+      <img src="\assets\img\making soup.png" alt="Image 2" class="slider-nav-item">
+      <img src="\assets\img\the soup.png" alt="Image 3" class="slider-nav-item">
+    </div>
+   
+  </div>
+  
+
+<!--end of test -->
+
+
+            </section>
+
+            <!--==================== QUESTIONS ====================-->
+            <section class="questions section" id="faqs">
+                <h2 class="section__title-center questions__title container">
+                    Our Supporters
+                </h2>
+
+                <div class="image-container">
+                    <img src="\assets\img\tcd.png" alt="Image 1" >
+                    
+                  </div>
+                  
+            </section>
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section container" id="contact">                
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Reach out to us today <br> via any of the given <br> information
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Call us for more information</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    089 986 1761
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Write us by mail</h3>
+                                <span class="contact__description">
+                                    <i class="ri-mail-line contact__icon"></i>
+                                    souperfreshwhey@gmail.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Email</label>
+                            </div>
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Subject</label>
+                            </div>
+
+                            <div class="contact__content contact__area">
+                                <textarea name="message" placeholder=" " class="contact__input"></textarea>                              
+                                <label for="" class="contact__label">Message</label>
+                            </div>
+                        </div>
+
+                        <button class="button button--flex">
+                            Send Message
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <img src = "\Souper Fresh Logo favicon-01.png"
+                        height = "32" width = "32"> Souper Fresh
+                    </a>
+
+                    <h3 class="footer__title">
+                        Subscribe to our newsletter <br> to stay updated
+                    </h3>
+
+                    <div class="footer__subscribe">
+                        <input type="email" placeholder="Enter your email" class="footer__input">
+
+                        <button class="button button--flex footer__button">
+                            Subscribe
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Address</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">Point Village</li>
+                        <li class="footer__information">Mayor Street Upper</li>
+                        <li class="footer__information">Dublin 1</li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Contact Us</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information">089 986 1761</li>
+                        
+                        <div class="footer__social">
+                            <a href="https://www.linkedin.com/company/its-souper/" class="footer__social-link">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/souper.fresh" class="footer__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+
+                
+            </div>
+
+            <p class="footer__copy">&#169; Souper Fresh. All rigths reserved</p>
+        </footer>
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="\assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="\assets/js/main.js"></script>
+
+       
+
+
+        
+    </body>
+</html>
