@@ -95,9 +95,9 @@
         <article class="product__card">
             
 
-            <img src="/assets/img/MOCKUP-01.png" alt="" class="product__img">
+            <img src="/assets/img/sf soup.png" alt="" class="product__img">
 
-            <h3 class="product__title">Souper Fresh Vegetable Soup</h3>
+            <h3 class="product__title">Vegetable Soup</h3>
             <span class="product__price">€3.00
                 
             </span>
@@ -126,8 +126,7 @@
             <form method = "POST" action = "{{url_for('addToCart')}}">
                 <input type="number" name="quantity" id="quantity_daru" value="0" min="0">
                 <input type = "hidden" name = "product_id" value = "daru">
-                <br/>
-                <br/>
+                
                 <button class="button--flex product__button" id = "daru" onclick = "addToCart('daru')">
                     <i class="ri-shopping-bag-line"></i>
                 </button>
@@ -146,7 +145,7 @@
 
     
     <input type="number" name="quantity" id="quantity_orchard" value="0" min="0">
-    
+                <input type = "hidden" name = "product_id" value = "orchard">
     
     <button class="button--flex product__button" id = "orchard" action = "{{url_for('addToCart')}}">
         <i class="ri-shopping-bag-line"></i>
@@ -167,6 +166,38 @@
     <input type="number" name="quantity" id="quantity_gleann" value="0" min="0">
     <input type = "hidden" name = "product_id" value = "gleann oir">
     <button class="button--flex product__button" id = "gleann oir" >
+        <i class="ri-shopping-bag-line"></i>
+    </button>
+</form>
+            
+        </article>
+        <article class="product__card">
+            
+
+            <img src="/assets/img/brie.png" alt="" class="product__img">
+
+            <h3 class="product__title">Tipperary Brie</h3>
+            <span class="product__price">€3.00</span>
+<form method="POST" action = "{{url_for('addToCart')}}">
+    <input type="number" name="quantity" id="quantity_brie" value="0" min="0">
+    <input type = "hidden" name = "product_id" value = "brie">
+    <button class="button--flex product__button" id = "brie" >
+        <i class="ri-shopping-bag-line"></i>
+    </button>
+</form>
+            
+        </article>
+        <article class="product__card">
+            
+
+            <img src="/assets/img/cooleeney.png" alt="" class="product__img">
+
+            <h3 class="product__title">Cooleeney</h3>
+            <span class="product__price">€4.00</span>
+<form method="POST" action = "{{url_for('addToCart')}}">
+    <input type="number" name="quantity" id="quantity_cooleeney" value="0" min="0">
+    <input type = "hidden" name = "product_id" value = "cooleeney">
+    <button class="button--flex product__button" id = "cooleeney" >
         <i class="ri-shopping-bag-line"></i>
     </button>
 </form>
@@ -193,8 +224,8 @@
     <div class="footer__container container grid">
         <div class="footer__content">
             <a href="#" class="footer__logo">
-                <img src = "/Souper Fresh Logo favicon-01.png" height = "32"
-                width="32"> Souper Fresh
+                <img src = "/assets/img/favicon.png" height = "32"
+            width = "32" type="image/x-icon"> Souper Fresh
             </a>
 
             <h3 class="footer__title">
