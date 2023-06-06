@@ -60,6 +60,7 @@ def create_checkout_session():
             mode='payment',
             success_url=YOUR_DOMAIN + '/success.html',
             cancel_url=YOUR_DOMAIN + '/cancel.html',
+            payment_method_types = ["card"],
         )
     except Exception as e:
         return str(e)
