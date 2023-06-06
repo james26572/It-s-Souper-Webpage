@@ -21,17 +21,17 @@ line_items = []
 # This is your test secret API key.
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
-app = Flask(__name__,static_folder="assets")
+application = Flask(__name__,static_folder="assets")
 
 YOUR_DOMAIN = 'http://localhost:4242'
-@app.route('/')
+@application.route('/')
 def home():
     return render_template("index.html")
-@app.route('/shop')
+@application.route('/shop')
 def shop():
     return render_template("shop.html")
 
-@app.route('/addToCart',methods = ["POST"])
+@application.route('/addToCart',methods = ["POST"])
 def addToCart():
     product_id = request.form.get("product_id")
     quantity = request.form.get("quantity")
@@ -48,7 +48,7 @@ def addToCart():
 
     return render_template("shop.html")
 
-@app.route('/create-checkout-session', methods=['POST','GET'])
+@application.route('/create-checkout-session', methods=['POST','GET'])
 def create_checkout_session():
     try:
         checkout_session = stripe.checkout.Session.create(
@@ -67,4 +67,4 @@ def create_checkout_session():
     return redirect(checkout_session.url, code=303)
 
 if __name__ == '__main__':
-    app.run(port=4242)
+    application.run(port=4242)
