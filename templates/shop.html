@@ -106,7 +106,7 @@
                 
                     
                     
-                <input type="number" name="quantity" id="quantity_veg" value="0" min="0">
+                <input type="number" name="quantity" id="quantity_veg" value="{{quantities['veg']}}" min="0">
                 <input type = "hidden" name = "product_id" id = "product_value" value = "veg">
                 
                 <button class="button--flex product__button">
@@ -124,7 +124,7 @@
             <h3 class="product__title">Darú</h3>
             <span class="product__price">€5.00</span>
             <form method = "POST" action = "{{url_for('addToCart')}}">
-                <input type="number" name="quantity" id="quantity_daru" value="0" min="0">
+                <input type="number" name="quantity" id="quantity_daru" value="{{quantities['daru']}}" min="0">
                 <input type = "hidden" name = "product_id" value = "daru">
                 
                 <button class="button--flex product__button" id = "daru" onclick = "addToCart('daru')">
@@ -144,7 +144,7 @@
 <form method = "POST" action = "{{url_for('addToCart') }}">
 
     
-    <input type="number" name="quantity" id="quantity_orchard" value="0" min="0">
+    <input type="number" name="quantity" id="quantity_orchard" value="{{quantities['orchard']}}" min="0">
                 <input type = "hidden" name = "product_id" value = "orchard">
     
     <button class="button--flex product__button" id = "orchard" action = "{{url_for('addToCart')}}">
@@ -163,7 +163,7 @@
             <h3 class="product__title">Gleann óir</h3>
             <span class="product__price">€5.00</span>
 <form method="POST" action = "{{url_for('addToCart')}}">
-    <input type="number" name="quantity" id="quantity_gleann" value="0" min="0">
+    <input type="number" name="quantity" id="quantity_gleann" value="{{quantities['gleann oir']}}" min="0">
     <input type = "hidden" name = "product_id" value = "gleann oir">
     <button class="button--flex product__button" id = "gleann oir" >
         <i class="ri-shopping-bag-line"></i>
@@ -179,7 +179,7 @@
             <h3 class="product__title">Tipperary Brie</h3>
             <span class="product__price">€3.00</span>
 <form method="POST" action = "{{url_for('addToCart')}}">
-    <input type="number" name="quantity" id="quantity_brie" value="0" min="0">
+    <input type="number" name="quantity" id="quantity_brie" value="{{quantities['brie']}}" min="0">
     <input type = "hidden" name = "product_id" value = "brie">
     <button class="button--flex product__button" id = "brie" >
         <i class="ri-shopping-bag-line"></i>
@@ -195,7 +195,7 @@
             <h3 class="product__title">Cooleeney</h3>
             <span class="product__price">€4.00</span>
 <form method="POST" action = "{{url_for('addToCart')}}">
-    <input type="number" name="quantity" id="quantity_cooleeney" value="0" min="0">
+    <input type="number" name="quantity" id="quantity_cooleeney" value="{{quantities['cooleeney']}}" min="0">
     <input type = "hidden" name = "product_id" value = "cooleeney">
     <button class="button--flex product__button" id = "cooleeney" >
         <i class="ri-shopping-bag-line"></i>
