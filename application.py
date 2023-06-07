@@ -72,7 +72,7 @@ def addToCart():
     for item in sessions[session_id]:
         if item['price'] == product:
             item['quantity']=quantity
-            session_quantities[session.get("user_id")]["product_id"] = quantity
+            session_quantities[session.get("user_id")][product_id] = quantity
             found = True
     if not found:
         newProduct = {'price':product,
