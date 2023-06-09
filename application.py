@@ -6,7 +6,7 @@ Stripe Sample.
 Python 3.6 or newer required.
 """
 import os
-from flask import Flask, redirect, request,render_template,jsonify,session
+from flask import Flask, redirect, request,render_template,jsonify,session,url_for
 from dotenv import load_dotenv
 import time
 
@@ -20,9 +20,9 @@ import stripe
 sessions = {}
 session_quantities = {}
 
-products = {"veg":'price_1NAMzjArDOvhvxI9l7GVv3N7',"daru":'price_1NCXIAArDOvhvxI9Lko5dXy8',
-            "orchard":"price_1NCXTuArDOvhvxI9zwJQOkRt","gleann oir":"price_1NCXUjArDOvhvxI93b7wUpBc",
-            "brie":"price_1NFkbKArDOvhvxI94MxYTFdC","cooleeney":"price_1NFkcOArDOvhvxI9eUCqGA9A"}
+products = {"veg":'price_1NHC2EArDOvhvxI9DypJtfRJ',"daru":'price_1NHC0jArDOvhvxI9m8eEfPg7',
+            "orchard":"price_1NHC0JArDOvhvxI9vVqcmdcx","gleann oir":"price_1NHBzQArDOvhvxI9AV5jUqY6",
+            "brie":"price_1NHAKhArDOvhvxI91obAKaOq","cooleeney":"price_1NHC2oArDOvhvxI9XqtmOs7Q"}
 
 
 
@@ -32,7 +32,7 @@ stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 application = Flask(__name__,static_folder="assets")
 application.secret_key = "hello"
 
-YOUR_DOMAIN = 'http://localhost:4242'
+YOUR_DOMAIN = 'https://souper-fresh.com/cancel'
 @application.route('/')
 def home():
     return render_template("index.html")
@@ -89,11 +89,26 @@ def addToCart():
 
 @application.route('/create-checkout-session', methods=['POST','GET'])
 def create_checkout_session():
+    shipping_line_item = {
+        'price_data': {
+            'currency': 'eur',
+            'unit_amount': 1000,  # Amount in cents ($10 * 100)
+            'product_data': {
+                'name': 'Shipping',
+                'description': 'Shipping charge',
+            },
+        },
+        'quantity': 1,
+    }
 
     
     
     session_id = session.get("user_id")
     line_items = sessions[session_id]
+
+
+    line_items.append(shipping_line_item)
+
     try:
         checkout_session = stripe.checkout.Session.create(
             line_items=line_items,
@@ -102,8 +117,8 @@ def create_checkout_session():
     'allowed_countries': ['IE'],  # Replace with the desired country codes
 },
             mode='payment',
-            success_url=YOUR_DOMAIN + '/success.html',
-            cancel_url=YOUR_DOMAIN + '/cancel.html',
+            success_url= url_for('success', _external=True),
+            cancel_url=url_for('cancel', _external=True),
             payment_method_types = ["card"],
             
             
@@ -113,6 +128,15 @@ def create_checkout_session():
         return str(e)
 
     return redirect(checkout_session.url, code=303)
+
+
+@application.route('/cancel')
+def cancel():
+    return render_template('cancel.html')
+
+@application.route('/success')
+def success():
+    return render_template('success.html')
 
 if __name__ == '__main__':
     application.run(port=4242)
