@@ -204,6 +204,42 @@
             
         </article>
 
+
+        <article class="product__card">
+            
+
+            <img src="/assets/img/chutney.png" alt="" class="product__img">
+
+            <h3 class="product__title">Apple Chutney</h3>
+            <span class="product__price">€1.90</span>
+<form method="POST" action = "{{url_for('addToCart')}}">
+    <input type="number" name="quantity" id="quantity_apple_chutney" value="{{quantities['apple_chutney']}}" min="0">
+    <input type = "hidden" name = "product_id" value = "apple_chutney">
+    <button class="button--flex product__button" id = "apple_chutney" >
+        <i class="ri-shopping-bag-line"></i>
+    </button>
+</form>
+            
+        </article>
+
+
+        <article class="product__card">
+            
+
+            <img src="/assets/img/goose_berry_chutney.png" alt="" class="product__img">
+
+            <h3 class="product__title">Gooseberry Chutney Chutney</h3>
+            <span class="product__price">€1.90</span>
+<form method="POST" action = "{{url_for('addToCart')}}">
+    <input type="number" name="quantity" id="quantity_goose_berry_chutney" value="{{quantities['goose_berry_chutney']}}" min="0">
+    <input type = "hidden" name = "product_id" value = "goose_berry_chutney">
+    <button class="button--flex product__button" id = "goose_berry_chutney" >
+        <i class="ri-shopping-bag-line"></i>
+    </button>
+</form>
+            
+        </article>
+
         
 
         

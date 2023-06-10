@@ -22,7 +22,9 @@ session_quantities = {}
 
 products = {"veg":'price_1NHC2EArDOvhvxI9DypJtfRJ',"daru":'price_1NHC0jArDOvhvxI9m8eEfPg7',
             "orchard":"price_1NHC0JArDOvhvxI9vVqcmdcx","gleann oir":"price_1NHBzQArDOvhvxI9AV5jUqY6",
-            "brie":"price_1NHAKhArDOvhvxI91obAKaOq","cooleeney":"price_1NHC2oArDOvhvxI9XqtmOs7Q"}
+            "brie":"price_1NHAKhArDOvhvxI91obAKaOq","cooleeney":"price_1NHC2oArDOvhvxI9XqtmOs7Q",
+            "apple_chutney":"price_1NHFkDArDOvhvxI9juqTKu8M",
+            "goose_berry_chutney":"price_1NHO8ZArDOvhvxI9P45F9a5K"}
 
 
 
