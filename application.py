@@ -47,7 +47,7 @@ def shop():
 
     
     quantities = {"veg":0,"daru":0,"orchard":0,"gleann oir":0,
-                  "brie":0,"cooleeney":0}
+                  "brie":0,"cooleeney":0,"apple_chutney":0,"goose_berry_chutney":0}
     
     session_quantities[session.get("user_id")] = quantities
     print(session.get("user_id"))
